@@ -22,6 +22,6 @@ app.use('/graphiql', graphiqlExpress({ endpointURL: graphqlEndpoint }));
 
 // add force:true in sync to drop database in migrate all tables
 
-models.sequelize.sync({}).then(() => {
+models.sequelize.sync({force : true}).then(() => {
   app.listen(8081);
 });
